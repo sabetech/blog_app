@@ -6,10 +6,8 @@ class Post < ApplicationRecord
   after_save :update_post_counter
 
   validates :title, presence: true, length: { maximum: 250 }
-  validates :comments_count, numericality: { only_integer: true }
-  validates :comments_count, comparison: { greater_than_or_equal_to: 0 }
-  validates :comments_count, numericality: { only_integer: true }
-  validates :comments_count, comparison: { greater_than_or_equal_to: 0 }
+  validates :comments_count, numericality: { only_integer: true }, comparison: { greater_than_or_equal_to: 0 }
+  validates :likes_count, numericality: { only_integer: true }, comparison: { greater_than_or_equal_to: 0 }
 
   def post_counter
     user.increment!(:posts_count)
