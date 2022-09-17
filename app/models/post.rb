@@ -1,17 +1,19 @@
 class Post < ApplicationRecord
-  belongs_to :author, class_name: 'User'
+  belongs_to :user, class_name: 'User'
   has_many :comments, foreign_key: 'posts_id'
   has_many :likes, foreign_key: 'posts_id'
+  
+  after_save :update_post_counter
 
-  def self.post_counter(user_id)
-    user = User.find(user_id)
-    if user.posts_count.nil?
-      user.posts_count = 1
-    else
-      user.posts_count += 1
-    end
 
-    user.save
+  validates :title, presence: true, length: { maximum: 250 }
+  validates :comments_count, numericality: { only_integer: true }
+  validates :comments_count, comparison: { greater_than_or_equal_to: 0 }
+  validates :comments_count, numericality: { only_integer: true }
+  validates :comments_count, comparison: { greater_than_or_equal_to: 0 }
+
+  def post_counter
+    user.increment!(:posts_count)
   end
 
   def self.five_recent_comments(user_id, posts_id)
