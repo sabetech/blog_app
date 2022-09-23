@@ -32,9 +32,9 @@
     border: 2px solid black;
     padding: 10px;
     flex: 10;
-    width: 90vw;
+    width: 70vw;
     margin-top: 20px;
-    margin-left: 5rem;
+    margin-left: 1rem;
   }
   
   .img {
@@ -46,7 +46,7 @@
     border: 2px solid black;
     padding: 10px;
     flex: 10;
-    width: 20vw;
+    width: 10vw;
   }
   
   .bio,
@@ -54,9 +54,9 @@
     border: 2px solid black;
     padding: 10px;
     flex: 10;
-    width: 90vw;
+    width: 80vw;
     margin-top: 20px;
-    margin-left: 5rem;
+    margin-left: 1rem;
   }
   
   .name {
