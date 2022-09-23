@@ -7,7 +7,8 @@ class User < ApplicationRecord
   validates :posts_count, numericality: { only_integer: true }
   validates :posts_count, comparison: { greater_than_or_equal_to: 0 }
 
-  def self.three_most_posts(user_id)
-    Post.where(user_id: user_id).order(created_at: :desc).limit(3).all
+  def three_most_latest_posts
+    posts.last(3).reverse
+    # Post.where(user_id: @id).order(created_at: :desc).limit(3).all
   end
 end

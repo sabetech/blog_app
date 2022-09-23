@@ -1,1 +1,24 @@
-<span><strong>Title of post:</strong></span>
+<div >
+  <div class="posts">
+    <div>
+      <h2 class='name'>
+      Post
+        <span class="name">By <%= @post.user.name %></span>
+      </h2>
+      <div>
+        <%= render layout: "shared/tag" do %>
+          <%= @post.comments_count %> Comments
+        <% end %>
+        <%= render layout: "shared/tag" do %>
+          <%= @post.likes_count %> Likes
+        <% end %>
+      </div>
+    </div>
+    <p><%= @post.title %></p>
+    <p><%= @post.text %></p>
+  </div>
+  <div class="posts">
+  <span class="name"> Comments By <%= @post.user.name %></span>
+    <%= render partial: 'shared/comment', collection: @post.user.comments  %>
+  </div>
+</div>

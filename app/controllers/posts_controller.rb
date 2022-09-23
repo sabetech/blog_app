@@ -1,11 +1,12 @@
 class PostsController < ApplicationController
   def index
-    user_id = params[:user_id]
-    puts user_id
-    @posts = Post.all unless Post.all.empty?
+
+    @user = User.find_by(id: params[:user_id])
+    @posts = @user.posts.order(id: :desc)
+
   end
 
   def show
-    @post_by_id = Post.find_by(id: params[:id])
+    @post = Post.find_by(id: params[:id])
   end
 end
