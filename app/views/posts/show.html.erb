@@ -16,9 +16,15 @@
     </div>
     <p><%= @post.title %></p>
     <p><%= @post.text %></p>
+    <div>
+    <%= render partial: 'likes/form',  locals: { post: @post }  %>
+     </div>
   </div>
   <div class="posts">
   <span class="name"> Comments By <%= @post.user.name %></span>
     <%= render partial: 'shared/comment', collection: @post.user.comments  %>
   </div>
+  <div>
+    <%= render partial: 'comments/form',  locals: { post: @post }  %>
+</div>
 </div>
