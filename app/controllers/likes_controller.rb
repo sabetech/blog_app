@@ -4,8 +4,7 @@ class LikesController < ApplicationController
     @like = @current_user.likes.new(post_id: @post.id)
 
     respond_to do |format|
-      if @like.save
-      end
+      @like.save
       format.html { redirect_to @post }
     end
   end
