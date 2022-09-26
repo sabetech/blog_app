@@ -25,7 +25,7 @@ RSpec.describe Like, type: :model do
     end
 
     it 'Must belong to a post' do
-      @like.posts_id = nil
+      @like.post_id = nil
       expect(@like).to_not be_valid
     end
   end

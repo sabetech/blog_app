@@ -1,7 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :user, class_name: 'User'
-  has_many :comments, foreign_key: 'posts_id'
-  has_many :likes, foreign_key: 'posts_id'
+  has_many :comments, foreign_key: 'post_id'
+  has_many :likes, foreign_key: 'post_id'
 
   after_save :post_counter
 
@@ -13,7 +13,7 @@ class Post < ApplicationRecord
     user.increment!(:posts_count)
   end
 
-  def five_recent_comments(user_id, posts_id)
-    Comment.where(user_id: user_id, posts_id: posts_id).order(created_at: :desc).limit(5).all
+  def five_recent_comments
+    comments.order(created_at: :desc).limit(5)
   end
 end

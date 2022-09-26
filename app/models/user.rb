@@ -9,6 +9,5 @@ class User < ApplicationRecord
 
   def three_most_latest_posts
     posts.last(3).reverse
-    # Post.where(user_id: @id).order(created_at: :desc).limit(3).all
   end
 end
