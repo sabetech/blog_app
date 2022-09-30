@@ -1,10 +1,10 @@
-
 require 'rails_helper'
 
+# Enable Metrics/BlockLength: Block has too many lines.
 RSpec.feature 'Posts/index', type: :feature do
   before(:all) do
     @user1 = User.create(name: 'Albert Tech', photo: 'https://randomuser.me/api/portraits/men/89.jpg',
-                              bio: 'Rspec Sample Bio')
+                         bio: 'Rspec Sample Bio')
     @post1 = Post.create(title: 'Rspec test 1', text: 'rspec test for post', user: @user1)
     @post2 = Post.create(title: 'Rspec test 2', text: 'rspec test for post', user: @user1)
     @post3 = Post.create(title: 'Rspec test 3', text: 'rspec test for post', user: @user1)
@@ -20,7 +20,7 @@ RSpec.feature 'Posts/index', type: :feature do
       visit user_posts_path(@user1)
       expect(page).to have_content(@user1.name)
     end
-    
+
     it 'Should show the Number of posts' do
       visit user_posts_path(@user1)
       expect(page).to have_text("Number of posts: #{@user1.posts_count}")
@@ -70,3 +70,4 @@ RSpec.feature 'Posts/index', type: :feature do
     end
   end
 end
+# Disable Metrics/BlockLength: Block has too many lines.
