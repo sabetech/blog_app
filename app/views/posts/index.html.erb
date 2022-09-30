@@ -15,15 +15,15 @@
     </div>
     <div >
       <% @posts.each do |post|%>
-        <p class='link'> Post#<%= post.id%> <p>
+        <p class='post-num'> Post#<%= post.id%> <p>
         <div class='eachPost'> 
           <%= render post %>
-          <%= render partial: 'shared/comment', collection: post.five_recent_comments %>
+          # <%= render partial: 'shared/comment', collection: post.five_recent_comments %>
         </div>
       <%end%>
     </div>
     <div class='link'>
-      <a>
+      <a class='pagination'>
         Pagination
       </a>
     </div>

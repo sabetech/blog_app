@@ -8,6 +8,10 @@ class User < ApplicationRecord
   validates :posts_count, comparison: { greater_than_or_equal_to: 0 }
 
   def three_most_latest_posts
-    posts.last(3).reverse
+    posts.includes(:user).last(3)
+  end
+
+  def all_posts
+    posts.order(created_at: :desc)
   end
 end
