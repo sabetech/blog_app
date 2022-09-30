@@ -13,7 +13,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html do
         @post = Post.new post_params
-        puts 'post are you valid? ', @post.valid?
+
         if @post.valid?
           @post.save
           redirect_to user_posts_path(current_user)
