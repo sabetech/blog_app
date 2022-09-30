@@ -186,3 +186,20 @@ a {
 .post_text {
   margin-top: 0.4rem;
 }
+
+login-page,
+.sign-in-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login {
+  font-size: large;
+  font-weight: 600;
+}
+
+.actions {
+  border-width: 1px;
+}
