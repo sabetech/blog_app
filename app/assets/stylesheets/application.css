@@ -187,7 +187,7 @@ a {
   margin-top: 0.4rem;
 }
 
-login-page,
+.login-page,
 .sign-in-page {
   display: flex;
   flex-direction: column;
