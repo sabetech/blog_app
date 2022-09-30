@@ -41,7 +41,7 @@ RSpec.describe Post, type: :model do
       Comment.new({ user: author, text: 'This is the comment six' })
     ]
 
-    expect(post.five_recent_comments(author.id, post.id).size).to be(5)
+    expect(post.five_recent_comments.size).to be(5)
     #   expect(post.five_last_comments.pluck(:id)).to match_array(post.comments.last(5).pluck(:id))
   end
 end
