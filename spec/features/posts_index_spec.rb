@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-# Enable Metrics/BlockLength: Block has too many lines.
+# rubocop:disable Metrics/BlockLength
 RSpec.feature 'Posts/index', type: :feature do
   before(:all) do
     @user1 = User.create(name: 'Albert Tech', photo: 'https://randomuser.me/api/portraits/men/89.jpg',
@@ -70,4 +70,4 @@ RSpec.feature 'Posts/index', type: :feature do
     end
   end
 end
-# Disable Metrics/BlockLength: Block has too many lines.
+# rubocop:enable Metrics/BlockLength
