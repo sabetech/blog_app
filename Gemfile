@@ -54,6 +54,8 @@ gem 'rails-controller-testing'
 
 gem 'cancancan'
 gem 'devise'
+gem 'devise-jwt'
+gem 'rack-cors'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
