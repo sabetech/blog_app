@@ -8,10 +8,10 @@
         </h2>
         <div>
           <%= render layout: "shared/tag" do %>
-            <%= @post.comments_counter %> Comments
+            <%= @post.comments_count %> Comments
           <% end %>
           <%= render layout: "shared/tag" do %>
-            <%= @post.likes_counter %> Likes
+            <%= @post.likes_count %> Likes
           <% end %>
         </div>
       </div>
@@ -26,7 +26,9 @@
     </div>
     <div class="comments">
     <span class="name"> Comments To <%= @post.user.name %></span>
+    <ul>
       <%= render partial: 'shared/comment', collection: @comments  %>
+    </ul>
     </div>
     <div class='add-comment'>
       <div class='comment'>

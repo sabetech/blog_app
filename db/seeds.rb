@@ -32,8 +32,9 @@ User.destroy_all
 bio = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit voluptates vitae similique modi nisi, commodi perferendis, id assumenda dolorem eaque tenetur suscipit! Tempora voluptatum vel sapiente eligendi qui, ipsum incidunt ex earum, debitis sed, harum esse! Officiis similique amet rerum! Molestiae quibusdam, perspiciatis dolore, aliquid minus dolores atque quia repudiandae nobis praesentium eum eius, earum necessitatibus voluptas doloremque iste ipsam dolorem dicta natus culpa. Iste sint quae non debitis ex."
 
 # User seeds
-first_user = User.create(name: 'Billy', email: 'billy01@gmail.com', password: '@edd12345', photo: 'https://randomuser.me/api/portraits/men/50.jpg', bio: 'Teacher from Holand.')
-second_user = User.create(name: 'Lilly', email: 'lilly01@gmail.com', password: '@sam12345', photo: 'https://randomuser.me/api/portraits/women/89.jpg', bio: 'Teacher from Poland.')
+first_user = User.create(name: 'Billy', email: 'billy01@gmail.com', password: '@password123AB', photo: 'https://randomuser.me/api/portraits/men/50.jpg', bio: 'Teacher from Holand.')
+second_user = User.create(name: 'Lilly', email: 'lilly01@gmail.com', password: '@password123AB', photo: 'https://randomuser.me/api/portraits/women/89.jpg', bio: 'Teacher from Poland.')
+third_user = User.create(name: 'Craig', email: 'craig61@gmail.com', password: '@password123AB', photo: 'https://randomuser.me/api/portraits/women/21.jpg', bio: 'Teacher from Abfoa.')
 
 p "Created #{User.count} Users"
 
@@ -44,8 +45,8 @@ post_3 = Post.create(user: first_user, title: 'Post Three', text: 'This is the p
 post_4 = Post.create(user: first_user, title: 'Post Four', text: 'This is the post four. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda labore itaque, numquam ipsum dolorum, vero aperiam voluptas, architecto iure obcaecati dignissimos temporibus necessitatibus laborum consequatur provident perspiciatis autem iste! Aut!')
 post_5 = Post.create(user: second_user, title: 'Post Five', text: 'This is the post one. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda labore itaque, numquam ipsum dolorum, vero aperiam voluptas, architecto iure obcaecati dignissimos temporibus necessitatibus laborum consequatur provident perspiciatis autem iste! Aut!')
 post_6 = Post.create(user: second_user, title: 'Post Six', text: 'This is the post two. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda labore itaque, numquam ipsum dolorum, vero aperiam voluptas, architecto iure obcaecati dignissimos temporibus necessitatibus laborum consequatur provident perspiciatis autem iste! Aut!')
-post_7 = Post.create(user: second_user, title: 'Post Seven', text: 'This is the post three. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda labore itaque, numquam ipsum dolorum, vero aperiam voluptas, architecto iure obcaecati dignissimos temporibus necessitatibus laborum consequatur provident perspiciatis autem iste! Aut!')
-post_8 = Post.create(user: second_user, title: 'Post Eight', text: 'This is the post four. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda labore itaque, numquam ipsum dolorum, vero aperiam voluptas, architecto iure obcaecati dignissimos temporibus necessitatibus laborum consequatur provident perspiciatis autem iste! Aut!')
+post_7 = Post.create(user: third_user, title: 'Post Seven', text: 'This is the post three. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda labore itaque, numquam ipsum dolorum, vero aperiam voluptas, architecto iure obcaecati dignissimos temporibus necessitatibus laborum consequatur provident perspiciatis autem iste! Aut!')
+post_8 = Post.create(user: third_user, title: 'Post Eight', text: 'This is the post four. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda labore itaque, numquam ipsum dolorum, vero aperiam voluptas, architecto iure obcaecati dignissimos temporibus necessitatibus laborum consequatur provident perspiciatis autem iste! Aut!')
 
 p "Created #{Post.count} Posts"
 
