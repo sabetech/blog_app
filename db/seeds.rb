@@ -32,8 +32,8 @@ User.destroy_all
 bio = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit voluptates vitae similique modi nisi, commodi perferendis, id assumenda dolorem eaque tenetur suscipit! Tempora voluptatum vel sapiente eligendi qui, ipsum incidunt ex earum, debitis sed, harum esse! Officiis similique amet rerum! Molestiae quibusdam, perspiciatis dolore, aliquid minus dolores atque quia repudiandae nobis praesentium eum eius, earum necessitatibus voluptas doloremque iste ipsam dolorem dicta natus culpa. Iste sint quae non debitis ex."
 
 # User seeds
-first_user = User.create(name: 'Billy', email: 'billy01@gmail.com', password: '@edd12345', photo: 'shrtco.de/do7AF4', bio: 'Teacher from Holand.')
-second_user = User.create(name: 'Lilly', email: 'lilly01@gmail.com', password: '@sam12345', photo: 'shrtco.de/do7AF4', bio: 'Teacher from Poland.')
+first_user = User.create(name: 'Billy', email: 'billy01@gmail.com', password: '@edd12345', photo: 'https://randomuser.me/api/portraits/men/50.jpg', bio: 'Teacher from Holand.')
+second_user = User.create(name: 'Lilly', email: 'lilly01@gmail.com', password: '@sam12345', photo: 'https://randomuser.me/api/portraits/women/89.jpg', bio: 'Teacher from Poland.')
 
 p "Created #{User.count} Users"
 

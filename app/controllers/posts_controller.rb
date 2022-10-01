@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts.includes(:user).where(user_id: params[:user_id]).references(:posts)
@@ -6,7 +8,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find_by(id: params[:id])
-    @comments = @post.comments.includes(:user)
+    @comments = @post.comments.includes(:user, :post)
   end
 
   def create
@@ -26,6 +28,18 @@ class PostsController < ApplicationController
 
   def new
     render :new, locals: { user: current_user, post: Post.new }
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    flash[:notice] = 'Post Deleted Successfully'
+    # redirect_to user_path(@post.user), notice: "Successfully deleted the post #{@post.title}."
+
+    respond_to do |format|
+      format.html { redirect_to "/users/#{current_user.id}/posts" }
+      format.json { head :no_content }
+    end
   end
 
   private
