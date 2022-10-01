@@ -3,4 +3,7 @@
 require_relative 'config/environment'
 
 run Rails.application
+
+require 'rack/cors'
+
 Rails.application.load_server
